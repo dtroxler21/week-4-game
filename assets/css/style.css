@@ -1,0 +1,25 @@
+/*Fixing sizes of the crystals*/
+#blue-crystal, #diamond-crystal, #green-crystal, #yellow-crystal {
+	width: 120px;
+	height: 120px;
+}
+
+body {
+	background: url("../images/mountains.jpeg");
+	background-size: 1400px 800px;
+}
+
+/*Applying Google font to headers*/
+h1, h2, h3 {
+	font-family: 'Rammetto One', cursive !important;
+}
+
+h1 {
+	text-align: center;
+}
+
+.section {
+	background-color: gray; opacity:0.6;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}

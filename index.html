@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	
+	<meta charset="utf-8">
+	
+	<!--Linking css, bootstrap, and Google fonts-->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+
+	<title>Crystals Collector</title>
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<!--Creating webpage name-->
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3 section">
+				<h1>Crystals Collector</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			
+			<!--Designating this section to the crystal buttons, scores and wins and losses-->
+			<div class="col-md-4 col-md-offset-2 section">
+				<h3 id="win-counter">Wins: <span id="js-wins"></span></h3>
+				<h3 id="loss-counter">Losses: <span id="js-losses"></span></h3>
+				<h3 id="target-score">Target Score: <span id="js-target-score"></span></h3>
+				<h3 id="total-score">Total Score: <span id="js-total-score"></span></h3>
+			</div>
+
+			<!--Creating instructions for the game to be displayed-->
+			<div class="col-md-4 section">
+				<h2>Instructions</h2>
+				<p>You will be given a random number at the start of the game.</p>
+				<p>There are four crystals. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+				<p>You win the game by matching your total score to the target score. You lose the game by going over the target score.</p>
+				<p>The value of each crystal will be hidden from you until you click on it. Each time you play, the game will change the values of the crystals and the target score.</p>
+			</div>
+
+		</div>
+				
+		<div class="row">
+			<div class="col-md-8 col-md-offset-3">
+				<img src="./assets/images/blue-crystal.png" id="blue-crystal">
+				<img src="./assets/images/diamond-crystal.png" id="diamond-crystal">
+				<img src="./assets/images/green-crystal.png" id="green-crystal">
+				<img src="./assets/images/yellow-crystal.png" id="yellow-crystal">
+			</div>
+		</div>
+
+	</div>
+
+	<!--Linking jQuery and JavaScript file-->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./assets/javascript/game.js"></script>
+
+</body>
+</html>
