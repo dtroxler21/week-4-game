@@ -18,11 +18,8 @@ h1 {
 	text-align: center;
 }
 
-h2, h3 {
-	color: ;
-}
-
 .section {
 	margin-right: 20px;
 	margin-bottom: 20px;
+	background: gray;
 }
