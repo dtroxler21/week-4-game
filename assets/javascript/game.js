@@ -3,11 +3,11 @@ $(document).ready(function() {
 	//Creating object with properties for the game
 	var crystal = {
 		targetScore: "",
-		totalScore: "",
+		totalScore: 0,
 		wins: 0,
 		losses: 0,
 		crystalValues: [],
-		crystalArray: [$("#blueCrystal"), $("#diamondCrystal"), $("#greenCrystal"), $("#yellowCrystal")],
+		crystalArray: ["./assets/images/blue-crystal.png","./assets/images/diamond-crystal.png", "./assets/images/green-crystal.png", "./assets/images/yellow-crystal.png"],
 
 		//Creating connection to html for later
 		html: {
@@ -19,12 +19,27 @@ $(document).ready(function() {
 
 		//Function to start game including assigning values to crystals, targetScore, etc.
 		startGame: function() {
+			console.log(crystal.totalScore);
 			crystal.totalScore = 0;
 			crystal.targetScore = Math.floor(Math.random() * 102) +19;
+			crystal.crystalValues = [];
+			$("#crystalPics").empty();	
 			for (var i = 0; i < 4; i++) {
-				crystal.crystalValues[i] = Math.floor(Math.random() * 12) + 1;
-				crystal.crystalArray[i].attr("crystal-values", crystal.crystalValues[i]);
+				crystal.crystalValues.push(Math.floor(Math.random() * 12) + 1);
+				console.log(crystal.crystalValues[i]);
+				console.log(crystal.crystalArray[i]);
+				
 			};
+
+			//Dynamically creating my crystal images after assigning values to them
+			for (var i = 0; i < 4; i++) {			
+				var crystalImage = $("<img class='crystals'>");
+				crystalImage.attr("src", crystal.crystalArray[i]);
+				crystalImage.attr("value", crystal.crystalValues[i]);
+				$("#crystalPics").append(crystalImage);
+			};
+
+			console.log(crystal.crystalValues);
 			crystal.html.winCounter.text(crystal.wins);
 			crystal.html.lossCounter.text(crystal.losses);
 			crystal.html.targetScore.text(crystal.targetScore);
@@ -57,10 +72,13 @@ $(document).ready(function() {
 	crystal.startGame();
 
 	//Creating on click events for the crystals
-	$(".crystals").on("click", function() {
-		var crystalValue = $(crystal).attr("crystal-values");
+	$("#crystalPics").on("click", ".crystals", function() {
+		console.log(crystal.totalScore);
+		var crystalValue = $(this).attr("value");
 		crystalValue = parseInt(crystalValue);
 		crystal.totalScore += crystalValue;
+		console.log(crystalValue);
+		console.log(crystal.totalScore);
 		crystal.crystalClick();
 		crystal.finishGame();
 	});

@@ -1,5 +1,5 @@
 /*Fixing sizes of the crystals*/
-#blue-crystal, #diamond-crystal, #green-crystal, #yellow-crystal {
+.crystals {
 	width: 120px;
 	height: 120px;
 }
